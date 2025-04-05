@@ -5,6 +5,7 @@ logger = logging.getLogger(__name__)
 
 class BTreeNode:
     def __init__(self, order, leaf=False):
+        logger.info("Creating a BTree Node")
         self.order = order
         self.leaf = leaf
         self.keys = []  # Stores keys
@@ -12,10 +13,11 @@ class BTreeNode:
 
 class BTree:
     def __init__(self, order):
+        logger.info("Creating a BTree")
         self.root = BTreeNode(order, leaf=True)
         self.order = order
 
-    def insert(self, key):
+    def insert(self, key)->result.ret_val:
         logger.info("Entering insert function")
         root = self.root
         if len(root.keys) == self.order - 1:  # root = full so split
@@ -28,6 +30,9 @@ class BTree:
         else:
             self.insert_when_free(root, key)
         logger.info("Exiting insert function")
+        ret = result.ret_val("insertion completed successfully",1)
+        return ret
+        
 
     def insert_when_free(self, node, key):
         logger.info("Entering insert_when_free")
@@ -77,6 +82,107 @@ class BTree:
         for child in node.child:
             self.print_tree(child, level + 1)
         logger.info("Exiting print_tree")
+   
+    def delete(self, key):
+        if not self.root:
+            print("Tree is empty")
+            return
+
+        self.delete_(self.root, key)
+
+        if len(self.root.keys) == 0:
+            if not self.root.leaf:
+                self.root = self.root.children[0]
+            else:
+                self.root = None
+    def delete_(self, node, key):
+        i = 0
+        while i < len(node.keys) and key > node.keys[i]:
+            i += 1
+
+        if i < len(node.keys) and node.keys[i] == key:
+            if node.leaf:
+                node.keys.pop(i)
+            else:
+                if len(node.children[i].keys) >= (self.order // 2):
+                    predecessor = self.get_predecessor(node, i)
+                    node.keys[i] = predecessor
+                    self.delete_(node.children[i], predecessor)
+                elif len(node.children[i + 1].keys) >= (self.order // 2):
+                    successor = self.get_successor(node, i)
+                    node.keys[i] = successor
+                    self.delete_(node.children[i + 1], successor)
+                else:
+                    self.merge(node, i)
+                    self.delete_(node.children[i], key)
+        else:
+            if node.leaf:
+                print(f"Key {key} not found")
+                return
+
+            is_last_child = (i == len(node.keys))
+            if len(node.children[i].keys) < (self.order // 2):
+                self.fill(node, i)
+
+            if is_last_child and i > len(node.keys):
+                self.delete_(node.children[i - 1], key)
+            else:
+                self.delete_(node.children[i], key)
+    def get_predecessor(self, node, i):
+        cur = node.children[i]
+        while not cur.leaf:
+            cur = cur.children[-1]
+        return cur.keys[-1]
+
+    def get_successor(self, node, i):
+        cur = node.children[i + 1]
+        while not cur.leaf:
+            cur = cur.children[0]
+        return cur.keys[0]
+
+    def fill(self, node, i):
+        if i != 0 and len(node.children[i - 1].keys) >= (self.order // 2):
+            self.borrow_from_prev(node, i)
+        elif i != len(node.keys) and len(node.children[i + 1].keys) >= (self.order // 2):
+            self.borrow_from_next(node, i)
+        else:
+            if i != len(node.keys):
+                self.merge(node, i)
+            else:
+                self.merge(node, i - 1)
+
+    def borrow_from_prev(self, node, i):
+        child = node.children[i]
+        sibling = node.children[i - 1]
+
+        child.keys.insert(0, node.keys[i - 1])
+        if not child.leaf:
+            child.children.insert(0, sibling.children.pop())
+
+        node.keys[i - 1] = sibling.keys.pop()
+
+    def borrow_from_next(self, node, i):
+        child = node.children[i]
+        sibling = node.children[i + 1]
+
+        child.keys.append(node.keys[i])
+        if not child.leaf:
+            child.children.append(sibling.children.pop(0))
+
+        node.keys[i] = sibling.keys.pop(0)
+    
+    def merge(self, node, i):
+        child = node.children[i]
+        sibling = node.children[i + 1]
+
+        child.keys.append(node.keys.pop(i))
+        child.keys.extend(sibling.keys)
+
+        if not child.leaf:
+            child.children.extend(sibling.children)
+
+        node.children.pop(i + 1)
+
 
 
 def main():

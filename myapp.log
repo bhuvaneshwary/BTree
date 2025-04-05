@@ -63,3 +63,143 @@ INFO:__main__:Exiting print_tree
 INFO:__main__:Entering print_tree
 INFO:__main__:Exiting print_tree
 INFO:__main__:Exiting print_tree
+INFO:__main__:Started
+INFO:__main__:Creating a BTree
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Node is not full
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Entering split_child
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Exiting split_child
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering split_child
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Exiting split_child
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Started
+INFO:__main__:Creating a BTree
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Node is not full
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Entering split_child
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Exiting split_child
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering insert function
+INFO:__main__:Entering insert_when_free
+INFO:__main__:Inserting into a non-leaf node
+INFO:__main__:Entering split_child
+INFO:__main__:Creating a BTree Node
+INFO:__main__:Exiting split_child
+INFO:__main__:Entering insert_when_free
+INFO:__main__:The node is a leaf
+INFO:__main__:Exiting insert_when_free
+INFO:__main__:Exiting insert function
+INFO:__main__:Entering print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Entering print_tree
+INFO:__main__:Exiting print_tree
+INFO:__main__:Exiting print_tree
